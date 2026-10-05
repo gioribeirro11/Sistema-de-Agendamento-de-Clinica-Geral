@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sistema de Agendamento de Consultas</title>
+<style>
+body{font-family:Arial,Helvetica,sans-serif;line-height:1.6;max-width:760px;margin:0 auto;padding:1.5rem;color:#222;background:#fff}
+h1{border-bottom:2px solid #222;padding-bottom:.5rem}
+h2{border-bottom:1px solid #ccc;padding-bottom:.3rem;margin-top:2rem}
+pre{background:#f4f4f4;border:1px solid #ddd;padding:1rem;overflow-x:auto;font-size:.9rem}
+nav a{margin-right:.8rem}
+a{color:#222}
+footer{margin-top:3rem;border-top:1px solid #ccc;padding-top:1rem;font-size:.9rem;color:#555}
+</style>
+</head>
+<body>
+
+<h1>Sistema de Agendamento de Consultas</h1>
+<p>Plataforma digital (site ou aplicativo) para agendar, gerenciar e acompanhar consultas médicas.</p>
+
+<nav>
+<a href="#visao">Visão geral</a>
+<a href="#usuarios">Usuários</a>
+<a href="#funcionalidades">Funcionalidades</a>
+<a href="#objetivos">Objetivos</a>
+<a href="#fluxograma">Fluxograma</a>
+<a href="#algoritmo">Algoritmo</a>
+<a href="#codigo">Código</a>
+</nav>
+
+<h2 id="visao">Visão geral</h2>
+<ol>
+<li><b>Cadastro/Login:</b> pacientes e funcionários acessam com nome de usuário e senha.</li>
+<li><b>Visualização da agenda:</b> o paciente vê os horários disponíveis.</li>
+<li><b>Agendamento:</b> o paciente escolhe data, horário e médico.</li>
+<li><b>Confirmação:</b> o sistema confirma e pode enviar notificações por SMS ou e-mail.</li>
+<li><b>Remarcação/Cancelamento:</b> o paciente pode alterar ou cancelar consultas.</li>
+<li><b>Administração:</b> a clínica acompanha agendas, histórico de pacientes e disponibilidade dos profissionais.</li>
+<li><b>Atendimento:</b> no dia da consulta, o sistema registra presença e atualiza as fichas de atendimento.</li>
+</ol>
+
+<h2 id="usuarios">Usuários do sistema</h2>
+<ul>
+<li><b>Médicos:</b> visualizam a agenda, acessam dados dos pacientes e registram informações da consulta.</li>
+<li><b>Recepcionistas/Atendentes:</b> agendam consultas, organizam horários e cadastram pacientes.</li>
+<li><b>Pacientes:</b> criam conta, agendam, cancelam ou remarcam consultas e recebem notificações.</li>
+<li><b>Administrador:</b> gerencia o sistema e controla usuários e permissões.</li>
+</ul>
+
+<h2 id="funcionalidades">Funcionalidades</h2>
+<h3>Ações do paciente</h3>
+<ul>
+<li><b>Cadastro e login:</b> perfil com dados pessoais, convênio e histórico de consultas.</li>
+<li><b>Busca especializada:</b> filtro de médicos por especialidade, nome, disponibilidade ou localização.</li>
+<li><b>Agendamento em tempo real:</b> data e horários livres integrados à agenda do médico.</li>
+<li><b>Gestão de consultas:</b> ver agendamentos ativos, agendar ou cancelar.</li>
+<li><b>Notificações:</b> confirmações e lembretes automáticos por e-mail ou SMS.</li>
+</ul>
+<h3>Gestão e controle (médico/administrador)</h3>
+<ul>
+<li><b>Painel de agenda:</b> controle dos horários, com bloqueio de datas para folgas, feriados ou congressos.</li>
+<li><b>Prontuário digital simples:</b> observações básicas de cada consulta.</li>
+<li><b>Controle de status:</b> presença, faltas e atendimentos concluídos.</li>
+<li><b>Relatórios de fluxo:</b> volume de consultas por período e especialidades mais procuradas.</li>
+<li><b>Segurança de dados:</b> armazenamento seguro das informações sensíveis dos pacientes.</li>
+</ul>
+
+<h2 id="objetivos">Objetivos</h2>
+<ul>
+<li>Facilitar o agendamento de consultas.</li>
+<li>Reduzir filas e tempo de espera.</li>
+<li>Organizar a agenda médica.</li>
+<li>Evitar conflitos de horários.</li>
+<li>Melhorar a comunicação entre clínica e paciente.</li>
+<li>Armazenar histórico de atendimentos.</li>
+<li>Aumentar a eficiência da clínica.</li>
+</ul>
+
+<h2 id="fluxograma">Resumo do fluxograma</h2>
+<p>O fluxo começa com a coleta de dados básicos do paciente: CPF, nome e ano de nascimento. Em seguida, o usuário escolhe entre um novo agendamento ou consultar um agendamento existente.</p>
+<p><b>Marcar consulta:</b> o paciente seleciona a especialidade (Odontologia, Clínico Geral, Pediatria ou Raio-X). O sistema verifica a disponibilidade e mostra o resultado. Se o paciente confirmar, o sistema gera um comprovante e envia as informações por e-mail e WhatsApp. Se não confirmar, volta ao menu.</p>
+<p><b>Consultar agendamento:</b> o paciente vê os atendimentos pré-agendados e pode solicitar o cancelamento, que exige uma confirmação final.</p>
+
+<h2 id="algoritmo">Algoritmo (menu simples)</h2>
+<h3>1. Agendar</h3>
+<ol>
+<li>Inserir dados do paciente.</li>
+<li>Escolher data e horário.</li>
+<li>Verificar se o horário está disponível.</li>
+<li>Se indisponível, exibir "horário indisponível".</li>
+<li>Se disponível: confirmar, exibir confirmação, gerar comprovante e enviar SMS/e-mail.</li>
+</ol>
+<h3>2. Consultar</h3>
+<ol>
+<li>Inserir CPF ou nome.</li>
+<li>Buscar o agendamento.</li>
+<li>Exibir o resultado.</li>
+</ol>
+<h3>3. Cancelar</h3>
+<ol>
+<li>Inserir os dados do agendamento.</li>
+<li>Confirmar o cancelamento.</li>
+<li>Se não confirmado, exibir "cancelamento não realizado".</li>
+<li>Se confirmado: cancelar o agendamento, gerar comprovante e enviar SMS/e-mail.</li>
+</ol>
+
+<h2 id="codigo">Código simples (pseudocódigo)</h2>
+<pre><code>// Programa Sistema Agendamento
+INICIO
+ESCREVA("1- Agendar | 2- Consultar | 3- Cancelar")
+LEIA(opcao)
+
+// --- CAMINHO 1: AGENDAR ---
+SE (opcao == 1) ENTAO
+    ESCREVA("Digite o nome e o horário:")
+    LEIA(dados)
+    SE (horario_disponivel) ENTAO
+        ESCREVA("Agendamento confirmado!")
+    SENAO
+        ESCREVA("Horário ocupado.")
+    FIM_SE
+
+// --- CAMINHO 2: CONSULTAR ---
+SENAO SE (opcao == 2) ENTAO
+    ESCREVA("Digite o CPF ou Nome:")
+    LEIA(busca)
+    ESCREVA("Resultado encontrado: " + busca)
+
+// --- CAMINHO 3: CANCELAR ---
+SENAO SE (opcao == 3) ENTAO
+    ESCREVA("Qual agendamento deseja cancelar?")
+    LEIA(dados_cancelar)
+    ESCREVA("Confirma cancelamento? (Sim/Não)")
+    LEIA(confirmar)
+    SE (confirmar == "Sim") ENTAO
+        ESCREVA("Agendamento removido.")
+    FIM_SE
+FIM_SE
+
+// --- FINALIZAÇÃO ---
+ESCREVA("Gerando comprovante...")
+ESCREVA("Enviando SMS e E-mail de confirmação.")
+FIM</code></pre>
+
+<footer>Sistema de Agendamento de Consultas</footer>
+</body>
+</html>
