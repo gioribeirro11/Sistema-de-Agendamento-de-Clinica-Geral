@@ -1,3 +1,5 @@
+# Sistema de Agendamento de Consultas
+
 Sistema para agendar, consultar e cancelar consultas médicas. Esta versão é um programa de desktop feito em Python (Tkinter), que guarda os dados em um arquivo JSON.
 
 Documentação completa do projeto (visão geral, usuários, fluxograma e algoritmo): [agendamento.html](agendamento.html)
@@ -104,4 +106,3 @@ Estes itens estão na documentação do projeto, mas o programa atual não os te
 - `agendamentos.json`: os dados (criado pelo programa)
 - `agendamento.html`: documentação completa do projeto
 - `README.md`: este arquivo
-md…]()
